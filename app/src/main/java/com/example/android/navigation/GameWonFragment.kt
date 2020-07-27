@@ -35,9 +35,9 @@ class GameWonFragment : Fragment() {
                 inflater, R.layout.fragment_game_won, container, false)
 
         binding.nextMatchButton.setOnClickListener { view: View ->
-            view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment())
+            view.findNavController()
+                    .navigate(GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
         }
-
         val args = GameWonFragmentArgs.fromBundle(arguments!!)
         Toast.makeText(context, "NumCorrect: ${args.numCorrect}, NumQuestions: ${args.numQuestions}", Toast.LENGTH_LONG).show(
 
